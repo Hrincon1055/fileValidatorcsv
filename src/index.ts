@@ -11,7 +11,7 @@ import { SchemaFile } from './models/schemaFile';
 const validateFile = (
   schema: InterfaceFile[],
   fileUpload: any,
-  separator: string = ';'
+  separator: ';' | ',' = ';'
 ) => {
   return new Promise((resolve, reject) => {
     const infoFile: File = fileUpload.target.files[0];
@@ -126,7 +126,7 @@ const validateFile = (
                     }, LINEA ${index + 1}, ${
                       schema[schemaIndex].message
                         ? schema[schemaIndex].message
-                        : 'El Campo solo puede incluir los siguientes valores.'
+                        : 'El campo solo puede incluir los siguientes valores.'
                     } (${schema[schemaIndex]?.include}).`
                   );
               }
@@ -142,7 +142,7 @@ const validateFile = (
                     }, LINEA ${index + 1}, ${
                       schema[schemaIndex].message
                         ? schema[schemaIndex].message
-                        : 'El Campo no cumple los criterios de la expresión regular .'
+                        : 'El campo no cumple los criterios de la expresión regular.'
                     } (${schema[schemaIndex]?.reg}).`
                   );
               }

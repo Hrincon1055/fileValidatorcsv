@@ -5,7 +5,7 @@ export class SchemaFile {
   constructor(model: InterfaceFile[]) {
     this.modelFile = model;
   }
-  public getFileModelSchema(): InterfaceFile[] {
+  getFileModelSchema(): InterfaceFile[] {
     return this.modelFile;
   }
 }
