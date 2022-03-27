@@ -7,4 +7,6 @@ export interface InterfaceFile {
   unique?: boolean;
   message?: string;
   refIsGreaterDate?: string;
+  maxLength?: number;
+  minLength?: number;
 }
