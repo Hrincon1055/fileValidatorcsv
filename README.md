@@ -64,6 +64,8 @@ El objeto dentro del array se puede crear con las siguientes directivas de valid
 - unique?: boolean
 - message?: string
 - refIsGreaterDate?: string
+- maxLength?: number;
+- minLength?: number;
 
 * name, es el nombre que daremos a la columna y es obligatoria.
 * required, indica si la columna es obligatoria para todas las filas.
@@ -72,6 +74,9 @@ El objeto dentro del array se puede crear con las siguientes directivas de valid
 * Include, dentro de la columna solo se permitirán los datos que se encuentren dentro del array.
 * Unique, define que cada dato dentro de la columna debe ser único.
 * Message, en un mensaje personalizado que podremos colocar el array de salida de errores que se encontraron en el archivo, esta información cobrara sentido mas adelante.
+* maxLength, evalua la cantidad maxima que debe tener el campo.
+* minLength, evalua la cantidad minima que debe tener el campo.
+* refIsGreaterDate, permite verificar si la fecha de inicio es mayor a la final haciendo referencia a la fecha inicial
 
 ## utilizar la funcion de validateFile
 
