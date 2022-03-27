@@ -96,8 +96,18 @@ En este momento si llegáramos a probar nuestro archivo este no presentaría err
 
 ![Image errores](https://res.cloudinary.com/dwxvqq7v9/image/upload/v1648238981/6_yygxrv.jpg)
 
-####Bueno agreguemos errores intencionalmente al archivo y verifiquemos la salida.
+#### Bueno agreguemos errores intencionalmente al archivo y verifiquemos la salida.
 
 ![Image errores error](https://res.cloudinary.com/dwxvqq7v9/image/upload/v1648239512/7_bjcarg.jpg)
 
 Como podemos observar ahora el array nos muestra información de los errores y donde se encuentran cada uno de ellos, también podemos personalizar dicho error como se muestra en la línea 3 del array.
+
+# Nota
+
+En la salida de información encontrara un objeto que tiene:
+
+- dataFile: Muestra la información que se encuentra dentro del archivo.
+- errorsFile: Muestra los errores del archivo, es decir todo error que se halla configurado en el esquema.
+- infoFile: Muestra la información del archivo
+
+El errorsFile es un array que puede utilizar para definir su logica de negocio.
