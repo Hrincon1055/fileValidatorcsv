@@ -31,7 +31,7 @@ importaremos llas funciones requeridas con la siguiente line en nustro archivo .
 import { validateFile, SchemaFile } from 'filevalidatorcsv';
 ```
 
-para comenzar deberemos generar un esquema para nuestro archivo csv, para elle utilizaremos el siguiente archivo que contiene una serie de datos a los cuales deberemos colocarles unas reglas de validación.
+para comenzar deberemos generar un esquema para nuestro archivo csv, para ello utilizaremos el siguiente archivo que contiene una serie de datos a los cuales deberemos colocarles unas reglas de validación.
 
 Ver imagen.
 
