@@ -15,6 +15,12 @@ const validateFile = (
 ) => {
   return new Promise((resolve, reject) => {
     const infoFile: File = fileUpload.target.files[0];
+    const typeFile: string = fileUpload.target.files[0].name
+      .split('.')
+      .slice(
+        fileUpload.target.files[0].name.split('.').length - 1,
+        fileUpload.target.files[0].name.split('.').length
+      )[0];
     let dataFile: string[] = [];
     const reader = new FileReader();
     reader.readAsText(infoFile);
@@ -26,10 +32,16 @@ const validateFile = (
         let arrRowTemp: string[] = [];
         let errorsFile: string[] = [];
         let objFile: any = {};
+
+        if (typeFile !== 'csv') {
+          reject('Error: El tipo de archivo no es permitido.');
+          return;
+        }
         if (dataFile[0].split(separator).length !== schema.length) {
           reject('Error: El squema no concuerda con los datos del archivo.');
           return;
         }
+
         for (
           let dataFileRowIndex = 0;
           dataFileRowIndex < dataFile.length;
@@ -74,11 +86,11 @@ const validateFile = (
                 }
                 repetidos.length > 0 &&
                   dataError.add(
-                    `ERROR en la columna ${schema[schemaIndex].name},  ${
+                    `ERROR en la columna ${schema[schemaIndex].name}, ${
                       schema[schemaIndex].message
                         ? schema[schemaIndex].message
                         : 'La columna tiene valores duplicados.'
-                    }  `
+                    }`
                   );
               }
             );
@@ -126,8 +138,8 @@ const validateFile = (
                     }, LINEA ${index + 1}, ${
                       schema[schemaIndex].message
                         ? schema[schemaIndex].message
-                        : 'El campo solo puede incluir los siguientes valores.'
-                    } (${schema[schemaIndex]?.include}).`
+                        : 'El campo solo puede incluir los valores indicados para dicha clolumna .'
+                    }.`
                   );
               }
             );
@@ -143,7 +155,7 @@ const validateFile = (
                       schema[schemaIndex].message
                         ? schema[schemaIndex].message
                         : 'El campo no cumple los criterios de la expresión regular.'
-                    } (${schema[schemaIndex]?.reg}).`
+                    }.`
                   );
               }
             );

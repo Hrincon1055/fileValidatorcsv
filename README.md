@@ -1,6 +1,6 @@
 # File Validator csv
 
-## _Valida la inforción dentro de un archivo csv_
+## _Valida la información dentro de un archivo csv_
 
 Esta miniaplicación permite validar la información contenida dentro de un archivo csv, de forma que podamos definir un esquema de configuración para dicho archivo.
 Este esquema nos permite definir una serie de parámetros, que nuestro archivo csv deberá cumplir para poder continuar con el proceso o reglase de negocio establecidas en nuestro propio proyecto.
