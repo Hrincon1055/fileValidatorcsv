@@ -185,7 +185,7 @@ const validateFile = (
           if (schema[schemaIndex]?.minLength) {
             objFile[schema[schemaIndex].name].forEach(
               (value: string, index: number) => {
-                value.toString().trim().length >
+                value.toString().trim().length <
                   schema[schemaIndex]?.minLength! &&
                   dataError.add(
                     `ERROR en la columna ${
